@@ -5,6 +5,7 @@ import java.util.Objects;
 
 /**
  * 员工类
+ * @author 吴
  */
 public class Employee implements Serializable {
     private static final long serialVersionUID = -4931981890299906943L;

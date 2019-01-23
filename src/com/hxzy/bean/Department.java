@@ -4,6 +4,7 @@ import java.util.Objects;
 
 /**
  * 部门类
+ * @author 吴
  */
 public class Department {
     private int dId;
