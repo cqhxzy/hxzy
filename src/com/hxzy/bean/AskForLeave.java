@@ -5,6 +5,7 @@ import java.util.Objects;
 
 /**
  * 请假信息表类
+ * @author 吴
  */
 public class AskForLeave {
     private int id;
