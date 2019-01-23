@@ -3,13 +3,18 @@ package com.hxzy.bean;
 import java.sql.Date;
 import java.util.Objects;
 
+/**
+ * 考勤明细表
+ * @author yu
+ */
 public class Attendance {
     private int id; //编号
     private Employee e_id;// 员工编号;被考勤人
-
+    private Date start;// 上班时间
+    private Date leave;// 下班时间
     @Override
     public String toString() {
-        return "Attendance{" +
+        return "attendance{" +
                 "id=" + id +
                 ", e_id=" + e_id +
                 ", start=" + start +
@@ -72,7 +77,6 @@ public class Attendance {
         this.leave = leave;
     }
 
-    private Date start;// 上班时间
-    private Date leave;// 下班时间
+
 
 }

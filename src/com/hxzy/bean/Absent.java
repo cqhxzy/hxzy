@@ -5,7 +5,7 @@ import java.util.Objects;
 
 /**
  * 旷工类
- * @author 吴
+ * @author yu
  */
 public class Absent {
     private int id;		//编号
@@ -22,7 +22,7 @@ public class Absent {
 
     @Override
     public String toString() {
-        return "Absent{" +
+        return "absent{" +
                 "id=" + id +
                 ", begin=" + begin +
                 ", end=" + end +
