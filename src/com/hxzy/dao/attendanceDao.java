@@ -1,13 +1,13 @@
 package com.hxzy.dao;
 
-import com.hxzy.bean.attendance;
+import com.hxzy.bean.Attendance;
 
 import java.util.List;
 
-public interface attendanceDao extends CommonDao<attendance> {
+public interface attendanceDao extends CommonDao<Attendance> {
     /**
      * 全查
      * @return
      */
-    List<attendance> queryAll();
+    List<Attendance> queryAll();
 }

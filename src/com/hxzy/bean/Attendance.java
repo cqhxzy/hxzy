@@ -3,13 +3,13 @@ package com.hxzy.bean;
 import java.sql.Date;
 import java.util.Objects;
 
-public class attendance {
+public class Attendance {
     private int id; //编号
-    private employee e_id;// 员工编号;被考勤人
+    private Employee e_id;// 员工编号;被考勤人
 
     @Override
     public String toString() {
-        return "attendance{" +
+        return "Attendance{" +
                 "id=" + id +
                 ", e_id=" + e_id +
                 ", start=" + start +
@@ -21,7 +21,7 @@ public class attendance {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        attendance that = (attendance) o;
+        Attendance that = (Attendance) o;
         return id == that.id;
     }
 
@@ -38,11 +38,11 @@ public class attendance {
         this.id = id;
     }
 
-    public employee getE_id() {
+    public Employee getE_id() {
         return e_id;
     }
 
-    public void setE_id(employee e_id) {
+    public void setE_id(Employee e_id) {
         this.e_id = e_id;
     }
 
@@ -62,10 +62,10 @@ public class attendance {
         this.leave = leave;
     }
 
-    public attendance() {
+    public Attendance() {
     }
 
-    public attendance(int id, employee e_id, Date start, Date leave) {
+    public Attendance(int id, Employee e_id, Date start, Date leave) {
         this.id = id;
         this.e_id = e_id;
         this.start = start;

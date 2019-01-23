@@ -6,16 +6,16 @@ import java.util.Objects;
 /**
  * 工资发放类
  */
-public class wagesinfo {
+public class Wagesinfo {
     private  int id;  //编号
-    private employee e_id;   //员工编号
+    private Employee e_id;   //员工编号
     private Date time;   //发放时间
     private double wages;  //实发金额
     private double deduct;//扣除金额
 
     @Override
     public String toString() {
-        return "wagesinfo{" +
+        return "Wagesinfo{" +
                 "id=" + id +
                 ", e_id=" + e_id +
                 ", time=" + time +
@@ -28,7 +28,7 @@ public class wagesinfo {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        wagesinfo wagesinfo = (wagesinfo) o;
+        Wagesinfo wagesinfo = (Wagesinfo) o;
         return id == wagesinfo.id;
     }
 
@@ -45,11 +45,11 @@ public class wagesinfo {
         this.id = id;
     }
 
-    public employee getE_id() {
+    public Employee getE_id() {
         return e_id;
     }
 
-    public void setE_id(employee e_id) {
+    public void setE_id(Employee e_id) {
         this.e_id = e_id;
     }
 
@@ -77,10 +77,10 @@ public class wagesinfo {
         this.deduct = deduct;
     }
 
-    public wagesinfo() {
+    public Wagesinfo() {
     }
 
-    public wagesinfo(int id, employee e_id, Date time, double wages, double deduct) {
+    public Wagesinfo(int id, Employee e_id, Date time, double wages, double deduct) {
         this.id = id;
         this.e_id = e_id;
         this.time = time;

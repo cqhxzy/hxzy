@@ -1,12 +1,13 @@
 package com.hxzy.dao;
 
-import com.hxzy.bean.wagesinfo;
+import com.hxzy.bean.Wagesinfo;
+
 import java.util.List;
 
-public interface wagesinfoDao extends CommonDao<wagesinfo> {
+public interface wagesinfoDao extends CommonDao<Wagesinfo> {
     /**
      * 全查
      * @return
      */
-    List<wagesinfo> queryAll();
+    List<Wagesinfo> queryAll();
 }
