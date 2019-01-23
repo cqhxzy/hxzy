@@ -27,7 +27,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public int remove(int id) {
-        String sql = "delete from employee where id=?"
+        String sql = "delete from employee where id=?";
         return util.executeUpdate(sql,id);
     }
 
