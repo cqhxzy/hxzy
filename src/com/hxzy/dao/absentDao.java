@@ -1,13 +1,13 @@
 package com.hxzy.dao;
 
-import com.hxzy.bean.absent;
+import com.hxzy.bean.Absent;
 
 import java.util.List;
 
-public interface absentDao extends CommonDao<absent>{
+public interface absentDao extends CommonDao<Absent>{
     /**
      * 全查
      * @return
      */
-    List<absent> queryAll();
+    List<Absent> queryAll();
 }
