@@ -5,6 +5,7 @@ import java.util.Objects;
 
 /**
  * 工资发放类
+ * @author yu
  */
 public class Wagesinfo {
     private  int id;  //编号
@@ -15,7 +16,7 @@ public class Wagesinfo {
 
     @Override
     public String toString() {
-        return "Wagesinfo{" +
+        return "wagesinfo{" +
                 "id=" + id +
                 ", e_id=" + e_id +
                 ", time=" + time +

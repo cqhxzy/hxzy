@@ -4,7 +4,11 @@ import com.hxzy.bean.Wagesinfo;
 
 import java.util.List;
 
-public interface wagesinfoDao extends CommonDao<Wagesinfo> {
+/**
+ * 工资发放类/dao
+ * @author yu
+ */
+public interface WagesinfoDao extends CommonDao<Wagesinfo> {
     /**
      * 全查
      * @return

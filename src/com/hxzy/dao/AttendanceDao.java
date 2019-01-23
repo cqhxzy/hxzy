@@ -4,7 +4,11 @@ import com.hxzy.bean.Attendance;
 
 import java.util.List;
 
-public interface attendanceDao extends CommonDao<Attendance> {
+/**
+ * 考勤明细表类/dao
+ * @author yu
+ */
+public interface AttendanceDao extends CommonDao<Attendance> {
     /**
      * 全查
      * @return
