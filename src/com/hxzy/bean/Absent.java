@@ -3,6 +3,10 @@ package com.hxzy.bean;
 import java.sql.Date;
 import java.util.Objects;
 
+/**
+ * 旷工类
+ * @author 吴
+ */
 public class Absent {
     private int id;		//编号
     private Date begin;		//请假起始时间
