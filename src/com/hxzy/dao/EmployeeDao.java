@@ -25,4 +25,5 @@ public interface EmployeeDao extends CommonDao<Employee>{
      * @return
      */
     Employee updatePwd(String username,String oldPassword,String password);
+
 }
