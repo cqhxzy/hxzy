@@ -15,4 +15,11 @@ public interface AttendanceBiz extends CommonBiz<Attendance> {
      * @return
      */
     List<Attendance> queryAll();
+
+    /**
+     * 根据员工编号打卡
+     * @param id
+     * @return
+     */
+    List<Attendance> clock(int id);
 }

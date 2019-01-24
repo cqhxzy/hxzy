@@ -5,6 +5,8 @@ import com.hxzy.biz.EmployeeBiz;
 import com.hxzy.dao.EmployeeDao;
 import com.hxzy.dao.impl.EmployeeDaoImpl;
 
+import java.util.List;
+
 public class EmployeeBizImpl implements EmployeeBiz {
     private EmployeeDao dao = new EmployeeDaoImpl();
     @Override
@@ -25,5 +27,20 @@ public class EmployeeBizImpl implements EmployeeBiz {
     @Override
     public Employee queryOne(int id) {
         return dao.queryOne(id);
+    }
+
+    @Override
+    public List<Employee> queryAll() {
+        return dao.queryAll();
+    }
+
+    @Override
+    public Employee login(String username, String password) {
+        return dao.login(username,password);
+    }
+
+    @Override
+    public Employee updatePwd(String username, String oldPassword, String password) {
+        return dao.updatePwd(username,oldPassword,password);
     }
 }

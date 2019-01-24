@@ -36,14 +36,30 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public Employee queryOne(int id) {
-        String sql = "select e.id eId,e.name,e.loginPwd,e.idCard,e.phone,e.position,e.d_id,e.salary,e.donus,e.state from employee e where id=?";
+        String sql = "select e.id eId,e.name,e.loginPwd,e.idCard,e.phone,e.position,e.d_id,e.salary,e.p_id,e.donus,e.state from employee e where id=?";
         return util.queryOne(Employee.class,sql,id);
     }
 
     @Override
     public List<Employee> queryAll() {
-        String sql = "select e.id eId,e.name,e.loginPwd,e.idCard,e.phone,e.position,e.d_id,e.salary,e.donus,e.state from employee e";
+        String sql = "select e.id eId,e.name,e.loginPwd,e.idCard,e.phone,e.position,e.d_id,e.salary,e.donus,e.p_id,e.state from employee e";
         List<Employee> employees = util.queryList(Employee.class,sql);
         return employees;
     }
+
+    @Override
+    public Employee login(String username, String password) {
+        String sql = "select e.id.e.name,e.idCard,e.phone,e.position,e.d_id,e.salary,e.donus,e.p_id from employee e where idCard=? or phone=? and loginPwd=? and state=1";
+        Object[] params = {username,username,password};
+        return util.queryOne(Employee.class,sql,params);
+    }
+
+    @Override
+    public Employee updatePwd(String username, String oldPassword, String password) {
+        String sql ="update employee e set e.loginPwd=? where e.idCard=? or e.phone=? and e.loginPwd=?";
+        Object[] params ={password,username,username,oldPassword};
+        return util.queryOne(Employee.class,sql,params);
+    }
+
+
 }

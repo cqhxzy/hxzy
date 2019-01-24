@@ -33,19 +33,19 @@ public class AskForLeavaDaoImpl implements AskForLeavaDao {
 
     @Override
     public AskForLeave queryOne(int id) {
-        String sql = "select a.type,a.reason,a.begin,a.end,a.flag,a.e_id from askforleave a where a.id=?";
+        String sql = "select a.id,a.type,a.reason,a.begin,a.end,a.flag,a.e_id from askforleave a where a.id=?";
         return util.queryOne(AskForLeave.class,sql,id);
     }
 
     @Override
     public AskForLeave queryByEId(int eId) {
-        String sql = "select a.type,a.reason,a.begin,a.end,a.flag from askforleave a where a.e_id=?";
+        String sql = "select a.e_id eId,a.id,a.type,a.reason,a.begin,a.end,a.flag from askforleave a where a.e_id=?";
         return util.queryOne(AskForLeave.class,sql,eId);
     }
 
     @Override
     public List<AskForLeave> queryAll() {
-        String sql = "select a.type,a.reason,a.begin,a.end,a.flag,a.e_id from askforleave a";
+        String sql = "select a.id,a.type,a.reason,a.begin,a.end,a.flag,a.e_id from askforleave a";
         List<AskForLeave> askForLeaves = util.queryList(AskForLeave.class,sql);
         return askForLeaves;
     }

@@ -5,6 +5,8 @@ import com.hxzy.biz.AskForLeaveBiz;
 import com.hxzy.dao.AskForLeavaDao;
 import com.hxzy.dao.impl.AskForLeavaDaoImpl;
 
+import java.util.List;
+
 
 public class AskForLeaveBizImpl implements AskForLeaveBiz {
     private AskForLeavaDao dao = new AskForLeavaDaoImpl();
@@ -31,5 +33,10 @@ public class AskForLeaveBizImpl implements AskForLeaveBiz {
     @Override
     public AskForLeave queryByEId(int eId) {
         return dao.queryByEId(eId);
+    }
+
+    @Override
+    public List<AskForLeave> queryAll() {
+        return dao.queryAll();
     }
 }
