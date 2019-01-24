@@ -3,6 +3,8 @@ package com.hxzy.dao.impl;
 import com.hxzy.bean.Department;
 import com.hxzy.dao.DepartmentDao;
 
+import java.util.List;
+
 public class DepartmentDaoImpl implements DepartmentDao {
     @Override
     public int add(Department department) {
@@ -21,6 +23,11 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
     @Override
     public Department queryOne(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Department> queryAll() {
         return null;
     }
 }
