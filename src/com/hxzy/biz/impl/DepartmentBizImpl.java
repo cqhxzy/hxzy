@@ -1,26 +1,29 @@
 package com.hxzy.biz.impl;
 
 import com.hxzy.bean.Department;
-import com.hxzy.biz.DepartmemtBiz;
+import com.hxzy.biz.DepartmentBiz;
+import com.hxzy.dao.DepartmentDao;
+import com.hxzy.dao.impl.DepartmentDaoImpl;
 
-public class DepartmentBizImpl implements DepartmemtBiz {
+public class DepartmentBizImpl implements DepartmentBiz {
+    private DepartmentDao dao = new DepartmentDaoImpl();
     @Override
     public int add(Department department) {
-        return 0;
+        return dao.add(department);
     }
 
     @Override
     public int update(Department department) {
-        return 0;
+        return dao.update(department);
     }
 
     @Override
     public int remove(int id) {
-        return 0;
+        return dao.remove(id);
     }
 
     @Override
     public Department queryOne(int id) {
-        return null;
+        return dao.queryOne(id);
     }
 }

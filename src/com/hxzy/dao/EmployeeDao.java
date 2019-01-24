@@ -10,5 +10,5 @@ public interface EmployeeDao extends CommonDao<Employee>{
      * 全查
      * @return
      */
-    List<Absent> queryAll();
+    List<Employee> queryAll();
 }

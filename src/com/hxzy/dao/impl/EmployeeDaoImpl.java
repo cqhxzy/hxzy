@@ -8,24 +8,23 @@ import com.hxzy.util.DataSourceUtil;
 import java.util.List;
 
 public class EmployeeDaoImpl implements EmployeeDao {
-    private DataSourceUtil util = new DataSourceUtil().getInstance();
+
+    private DataSourceUtil util = DataSourceUtil.getInstance();
     @Override
     public int add(Employee employee) {
-        String sql = "INSERT INTO employee (`name`,loginPwd,idCard,phone,position,d_id,salary,donus,p_id,state)" +
-                " VALUES (?,?,?,?,?,?,?,?,?,?)";
-        Object[] params = {employee.getName(),employee.getLoginPwd(),employee.getIdCard(),employee.getPhone(),
-                           employee.getPosition(),employee.getDepartment(),employee.getSalary(),
-                           employee.getBonus(),employee.getLeaders(),employee.getState()};
-        return  util.executeUpdate(sql,params);
+        String sql = "insert into employee (name,loginPwd,idCard,phone,position,d_id,salary,donus,p_id,state)" +
+                " values (?,?,?,?,?,?,?,?,?,?)";
+        Object[] params = {employee.getName(),employee.getLoginPwd(),employee.getIdCard(),employee.getPhone(),employee.getPosition()
+        ,employee.getDepartment().getdId(),employee.getSalary(),employee.getBonus(),employee.getLeaders().geteId(),employee.getState()};
+        return util.executeUpdate(sql,params);
+
     }
 
     @Override
     public int update(Employee employee) {
-        String sql = "UPDATE employee SET  `name`=?,loginPwd=?,idCard=?,phone=?," +
-                "position=?,d_id=?,salary=?,donus=?,p_id=?,state=?  WHERE id=?" ;
-        Object[] params = {employee.getName(),employee.getLoginPwd(),employee.getIdCard(),employee.getPhone(),
-                employee.getPosition(),employee.getDepartment(),employee.getSalary(),
-                employee.getBonus(),employee.getLeaders(),employee.getState(),employee.geteId()};
+        String sql = "update employee set name=?,loginPwd=?,idCard=?,phone=?,position=?,d_id=?,salary=?,donus=?,p_id=?,state=? where id=?";
+        Object[] params = {employee.getName(),employee.getLoginPwd(),employee.getIdCard(),employee.getPhone(),employee.getPosition()
+                ,employee.getDepartment().getdId(),employee.getSalary(),employee.getBonus(),employee.getLeaders().geteId(),employee.getState(),employee.geteId()};
         return util.executeUpdate(sql,params);
     }
 
@@ -37,18 +36,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public Employee queryOne(int id) {
-        String sql = " SELECT e.id eid,e.`name` `name`,e.loginPwd pwd,e.idCard," +
-                " e.phone,e.position,e.d_id did,e.salary,e.donus,e.p_id pid,e.state" +
-                " FROM employee e  where id=?";
+        String sql = "select e.id eId,e.name,e.loginPwd,e.idCard,e.phone,e.position,e.d_id,e.salary,e.donus,e.state from employee e where id=?";
         return util.queryOne(Employee.class,sql,id);
     }
 
     @Override
-    public List<Absent> queryAll() {
-        String sql = " SELECT e.id eid,e.`name` `name`,e.loginPwd pwd,e.idCard," +
-                "e.phone,e.position,e.d_id did,e.salary,e.donus,e.p_id pid,e.state" +
-                " FROM employee e";
-        List<Absent> Employee = util.queryList(Absent.class, sql);
-        return Employee;
+    public List<Employee> queryAll() {
+        String sql = "select e.id eId,e.name,e.loginPwd,e.idCard,e.phone,e.position,e.d_id,e.salary,e.donus,e.state from employee e";
+        List<Employee> employees = util.queryList(Employee.class,sql);
+        return employees;
     }
 }
