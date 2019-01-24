@@ -5,6 +5,8 @@ import com.hxzy.biz.DepartmentBiz;
 import com.hxzy.dao.DepartmentDao;
 import com.hxzy.dao.impl.DepartmentDaoImpl;
 
+import java.util.List;
+
 public class DepartmentBizImpl implements DepartmentBiz {
     private DepartmentDao dao = new DepartmentDaoImpl();
     @Override
@@ -25,5 +27,10 @@ public class DepartmentBizImpl implements DepartmentBiz {
     @Override
     public Department queryOne(int id) {
         return dao.queryOne(id);
+    }
+
+    @Override
+    public List<Department> queryAll() {
+        return dao.queryAll();
     }
 }
