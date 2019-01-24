@@ -6,6 +6,8 @@ import com.hxzy.util.DataSourceUtil;
 
 import java.util.List;
 
+import java.util.List;
+
 public class DepartmentDaoImpl implements DepartmentDao {
     private DataSourceUtil util = DataSourceUtil.getInstance();
     @Override
@@ -39,5 +41,10 @@ public class DepartmentDaoImpl implements DepartmentDao {
         String sql = "select d.d_id,d.name from department d";
         List<Department> departments = util.queryList(Department.class,sql);
         return departments;
+    }
+
+    @Override
+    public List<Department> queryAll() {
+        return null;
     }
 }

@@ -18,7 +18,7 @@ import java.util.*;
 public class DataSourceUtil {
 
     //单例模式
-    private DataSourceUtil(){}
+    public DataSourceUtil(){}
     private static  DataSourceUtil instance = new DataSourceUtil();
     public static DataSourceUtil getInstance(){
         return instance;

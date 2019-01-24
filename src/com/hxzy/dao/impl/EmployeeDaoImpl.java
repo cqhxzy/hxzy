@@ -1,5 +1,6 @@
 package com.hxzy.dao.impl;
 
+import com.hxzy.bean.Absent;
 import com.hxzy.bean.Employee;
 import com.hxzy.dao.EmployeeDao;
 import com.hxzy.util.DataSourceUtil;
@@ -7,6 +8,7 @@ import com.hxzy.util.DataSourceUtil;
 import java.util.List;
 
 public class EmployeeDaoImpl implements EmployeeDao {
+
     private DataSourceUtil util = DataSourceUtil.getInstance();
     @Override
     public int add(Employee employee) {
@@ -15,6 +17,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         Object[] params = {employee.getName(),employee.getLoginPwd(),employee.getIdCard(),employee.getPhone(),employee.getPosition()
         ,employee.getDepartment().getdId(),employee.getSalary(),employee.getBonus(),employee.getLeaders().geteId(),employee.getState()};
         return util.executeUpdate(sql,params);
+
     }
 
     @Override
@@ -34,7 +37,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public Employee queryOne(int id) {
         String sql = "select e.id eId,e.name,e.loginPwd,e.idCard,e.phone,e.position,e.d_id,e.salary,e.donus,e.state from employee e where id=?";
-
         return util.queryOne(Employee.class,sql,id);
     }
 

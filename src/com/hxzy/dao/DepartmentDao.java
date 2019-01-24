@@ -1,5 +1,4 @@
 package com.hxzy.dao;
-
 import com.hxzy.bean.Department;
 
 import java.util.List;
