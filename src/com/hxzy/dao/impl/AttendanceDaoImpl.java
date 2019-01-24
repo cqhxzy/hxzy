@@ -24,15 +24,15 @@ public class AttendanceDaoImpl implements AttendanceDao {
 
     @Override
     public int add(Attendance attendance) {
-        String sql = "INSERT INTO attendance (e_id,`start`,`leave`) VALUES (?,?,?)";
-        Object[] params = {attendance.getE_id(),attendance.getStart(),attendance.getLeave()};
+        String sql = "INSERT INTO attendance (e_id,`start`,`type`) VALUES (?,?,?)";
+        Object[] params = {attendance.getE_id(),attendance.getStart(),attendance.getType()};
         return util.executeUpdate(sql,params);
     }
 
     @Override
     public int update(Attendance attendance) {
         String sql = "UPDATE attendance SET e_id=?,`start`=?,`leave`=?   WHERE id=?";
-        Object[] params = {attendance.getE_id(),attendance.getStart(),attendance.getLeave(),attendance.getId()};
+        Object[] params = {attendance.getE_id(),attendance.getStart(),attendance.getType(),attendance.getId()};
         return util.executeUpdate(sql,params);
     }
 

@@ -14,7 +14,7 @@ public class Employee implements Serializable {
     private String loginPwd;
     private String idCard;
     private String phone;
-    private int position;
+    private String position;
     private Department department;
     private Double salary;
     private Double bonus;
@@ -80,11 +80,11 @@ public class Employee implements Serializable {
         this.phone = phone;
     }
 
-    public int getPosition() {
+    public String getPosition() {
         return position;
     }
 
-    public void setPosition(int position) {
+    public void setPosition(String position) {
         this.position = position;
     }
 
@@ -131,7 +131,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(int eId, String name, String loginPwd, String idCard, String phone, int position, Department department, Double salary, Double bonus, Employee leaders, int state) {
+    public Employee(int eId, String name, String loginPwd, String idCard, String phone, String position, Department department, Double salary, Double bonus, Employee leaders, int state) {
         this.eId = eId;
         this.name = name;
         this.loginPwd = loginPwd;
