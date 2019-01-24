@@ -19,4 +19,10 @@ public interface EmployeeDao extends CommonDao<Employee>{
      * @return 一个Employee对象
      */
     Employee login(String username,String password);
+
+    /**
+     * 修改密码
+     * @return
+     */
+    Employee updatePwd(String username,String oldPassword,String password);
 }

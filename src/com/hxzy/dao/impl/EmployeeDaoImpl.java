@@ -53,4 +53,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
         Object[] params = {username,username,password};
         return util.queryOne(Employee.class,sql,params);
     }
+
+    @Override
+    public Employee updatePwd(String username, String oldPassword, String password) {
+        String sql ="update employee e set e.loginPwd=? where e.idCard=? or e.phone=? and e.loginPwd=?";
+        Object[] params ={password,username,username,oldPassword};
+        return util.queryOne(Employee.class,sql,params);
+    }
+
+
 }
