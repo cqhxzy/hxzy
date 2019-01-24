@@ -10,15 +10,15 @@ import java.util.Objects;
 public class Attendance {
     private int id; //编号
     private Employee e_id;// 员工编号;被考勤人
-    private Date start;// 上班时间
-    private Date leave;// 下班时间
+    private Date start;// 打卡时间
+    private int type;// 打卡类型
     @Override
     public String toString() {
         return "attendance{" +
                 "id=" + id +
                 ", e_id=" + e_id +
                 ", start=" + start +
-                ", leave=" + leave +
+                ", type=" + type +
                 '}';
     }
 
@@ -59,22 +59,22 @@ public class Attendance {
         this.start = start;
     }
 
-    public Date getLeave() {
-        return leave;
+    public int getType() {
+        return type;
     }
 
-    public void setLeave(Date leave) {
-        this.leave = leave;
+    public void setType(int type) {
+        this.type = type;
     }
 
     public Attendance() {
     }
 
-    public Attendance(int id, Employee e_id, Date start, Date leave) {
+    public Attendance(int id, Employee e_id, Date start, int type) {
         this.id = id;
         this.e_id = e_id;
         this.start = start;
-        this.leave = leave;
+        this.type = type;
     }
 
 
