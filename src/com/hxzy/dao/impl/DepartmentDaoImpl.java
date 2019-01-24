@@ -42,9 +42,4 @@ public class DepartmentDaoImpl implements DepartmentDao {
         List<Department> departments = util.queryList(Department.class,sql);
         return departments;
     }
-
-    @Override
-    public List<Department> queryAll() {
-        return null;
-    }
 }
