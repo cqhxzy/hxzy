@@ -38,4 +38,9 @@ public class EmployeeBizImpl implements EmployeeBiz {
     public Employee login(String username, String password) {
         return dao.login(username,password);
     }
+
+    @Override
+    public Employee updatePwd(String username, String oldPassword, String password) {
+        return dao.updatePwd(username,oldPassword,password);
+    }
 }

@@ -11,4 +11,6 @@ public interface EmployeeBiz extends CommonBiz<Employee> {
     List<Employee> queryAll();
 
     Employee login(String username,String password);
+
+    Employee updatePwd(String username,String oldPassword,String password);
 }
