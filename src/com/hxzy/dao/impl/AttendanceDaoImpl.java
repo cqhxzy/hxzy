@@ -23,18 +23,8 @@ public class AttendanceDaoImpl implements AttendanceDao {
     }
 
     @Override
-    public List<Attendance> clock(int id) {
-        String sql = "SELECT t.name,a.time,a.type,a.id FROM attendance a" +
-                "INNER JOIN(" +
-                "select e.name,e.id FROM employee e where e.id=?)t" +
-                "on t.id = a.e_id";
-        Object[] params = {id};
-        return util.queryList(Attendance.class,sql,params);
-    }
-
-    @Override
     public int add(Attendance attendance) {
-        String sql = "INSERT INTO attendance (e_id,`start`,`type`) VALUES (?,?,?)";
+        String sql = "INSERT INTO attendance (e_id,`time`,`type`) VALUES (?,?,?)";
         Object[] params = {attendance.getE_id(),attendance.getStart(),attendance.getType()};
         return util.executeUpdate(sql,params);
     }

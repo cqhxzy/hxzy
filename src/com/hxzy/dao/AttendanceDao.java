@@ -20,5 +20,5 @@ public interface AttendanceDao extends CommonDao<Attendance> {
      * @param id 员工编号
      * @return
      */
-    List<Attendance> clock(int id);
+
 }

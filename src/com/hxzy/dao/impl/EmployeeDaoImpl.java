@@ -1,10 +1,12 @@
 package com.hxzy.dao.impl;
 
 import com.hxzy.bean.Absent;
+import com.hxzy.bean.Attendance;
 import com.hxzy.bean.Employee;
 import com.hxzy.dao.EmployeeDao;
 import com.hxzy.util.DataSourceUtil;
 
+import java.util.Date;
 import java.util.List;
 
 public class EmployeeDaoImpl implements EmployeeDao {
@@ -61,5 +63,26 @@ public class EmployeeDaoImpl implements EmployeeDao {
         return util.queryOne(Employee.class,sql,params);
     }
 
+    @Override
+    public int clock(int id) {
+        String sql = "INSERT INTO attendance (`e_id`,`time`,`type`) VALUES (?,now(),?)";
+        return util.executeUpdate(sql,id);
+    }
 
+    @Override
+    public List<Attendance> clocked(int id) {
+        String sql = "SELECT t.name,a.time,a.type,a.id FROM attendance a" +
+                "INNER JOIN(" +
+                "select e.name,e.id FROM employee e where e.id=?)t" +
+                "on t.id = a.e_id";
+        Object[] params = {id};
+        return util.queryList(Attendance.class,sql,params);
+    }
+
+    @Override
+    public int askForLeave(int id, int type, int reason, Date begin,Date end) {
+        String sql = "insert into askforleave (type,reason,begin,end,e_id) values (?,?,?,?,?)";
+        Object[] params = {type,reason,begin,end,id};
+        return util.executeUpdate(sql,params);
+    }
 }

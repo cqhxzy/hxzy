@@ -19,11 +19,6 @@ public class AttendanceBizImpl implements AttendanceBiz {
     }
 
     @Override
-    public List<Attendance> clock(int id) {
-        return dao.clock(id);
-    }
-
-    @Override
     public int add(Attendance attendance) {
         return dao.add(attendance);
     }
