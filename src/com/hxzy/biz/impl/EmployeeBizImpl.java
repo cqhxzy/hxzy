@@ -6,6 +6,7 @@ import com.hxzy.biz.EmployeeBiz;
 import com.hxzy.dao.EmployeeDao;
 import com.hxzy.dao.impl.EmployeeDaoImpl;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -53,6 +54,16 @@ public class EmployeeBizImpl implements EmployeeBiz {
 
     @Override
     public int clock(int id) {
+        Attendance attendance = new Attendance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        String format = sdf.format(attendance.getStart());
+        int type = Integer.parseInt(format);
+        if(type < 12)
+            attendance.setType(1);
+        else if (type > 12)
+            attendance.setType(2);
+        else
+            attendance.setType(3);
         return dao.clock(id);
     }
 

@@ -65,7 +65,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public int clock(int id) {
-        String sql = "INSERT INTO attendance (`e_id`,`time`,`type`) VALUES (?,now(),?)";
+        String sql = "INSERT INTO attendance (`e_id`,`time`) VALUES (?,now())";
         return util.executeUpdate(sql,id);
     }
 
